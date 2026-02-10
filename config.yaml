@@ -1,0 +1,28 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: "Stremio Streaming Service"
+description: "Stremio streaming server (server.js) for local network streaming. Offload the streaming backend from your TV to your Home Assistant machine."
+version: "0.1.0"
+slug: "stremio-service"
+url: "https://github.com/Stremio/stremio-service"
+arch:
+  - amd64
+  - aarch64
+init: false
+homeassistant_api: false
+host_network: false
+ports:
+  11470/tcp: 11470
+  12470/tcp: 12470
+ports_description:
+  11470/tcp: "Stremio HTTP streaming server"
+  12470/tcp: "Stremio HTTPS streaming server"
+ingress: false
+startup: services
+map:
+  - config:rw
+  - share:rw
+options:
+  server_url: "https://dl.strem.io/server/v4.20.16/desktop/server.js"
+schema:
+  server_url: url
+panel_icon: "mdi:filmstrip"
