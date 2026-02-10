@@ -1,5 +1,7 @@
 # Stremio Streaming Service - Home Assistant Add-on
 
+[![Add repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Ftimojokinen%2Fhassio-stremio-server)
+
 Run Stremio's streaming server (`server.js`) on your Home Assistant machine. Offload torrent handling and transcoding from low-powered TVs to your always-on HA box.
 
 ## How It Works
@@ -13,8 +15,11 @@ Components:
 
 ## Installation
 
-1. Add this repository to Home Assistant Add-ons (or copy to your `addons` folder)
-2. Install **Stremio Streaming Service** from the Add-on Store
+1. Click the badge above, or manually add this repository URL in **Settings → Add-ons → Add-on Store → ⋮ → Repositories**:
+   ```
+   https://github.com/timojokinen/hassio-stremio-server
+   ```
+2. Install **Stremio Streaming Service**
 3. Start the add-on
 4. Point your Stremio client to `http://<HA_IP>:11470`
 

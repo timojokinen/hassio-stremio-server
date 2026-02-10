@@ -2,8 +2,8 @@
 name: "Stremio Streaming Service"
 description: "Stremio streaming server (server.js) for local network streaming. Offload the streaming backend from your TV to your Home Assistant machine."
 version: "0.1.0"
-slug: "stremio-service"
-url: "https://github.com/Stremio/stremio-service"
+slug: "stremio-server"
+url: "https://github.com/timojokinen/hassio-stremio-server"
 arch:
   - amd64
   - aarch64
