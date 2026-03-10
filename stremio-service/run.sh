@@ -23,7 +23,7 @@ export HOME="${STREMIO_DATA}"
 export APP_PATH="${STREMIO_DATA}"
 
 # Advertise the host's IP address to Stremio clients for direct stream connections
-export IPADDRESS="$(bashio::network.ipv4_address)"
+export IPADDRESS="$(hostname -I | awk '{print $1}')"
 
 # Allow connections from all interfaces (not just localhost)
 export NO_CORS=1
