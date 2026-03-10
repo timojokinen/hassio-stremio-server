@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+- use host_network for better performance
+- more memory for node.js process
+- ulimit
+
 ## 0.1.0
 
 - Initial release
