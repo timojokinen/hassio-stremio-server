@@ -22,6 +22,9 @@ export FFPROBE_BIN="$(which ffprobe)"
 export HOME="${STREMIO_DATA}"
 export APP_PATH="${STREMIO_DATA}"
 
+# Advertise the host's IP address to Stremio clients for direct stream connections
+export IPADDRESS="$(bashio::network.ipv4_address)"
+
 # Allow connections from all interfaces (not just localhost)
 export NO_CORS=1
 
@@ -49,13 +52,15 @@ if [ ! -f "${SERVER_JS}" ]; then
     exit 1
 fi
 
+ulimit -n 65536
+
 bashio::log.info "Starting Stremio streaming server..."
 
 # Run the Stremio streaming server in the data directory
 cd "${STREMIO_DATA}"
 
 # Start server.js in the background so we can health-check it
-node "${SERVER_JS}" &
+node --max-old-space-size=1024 "${SERVER_JS}" &
 SERVER_PID=$!
 
 # Give the server a moment to start

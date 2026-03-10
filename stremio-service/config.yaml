@@ -9,13 +9,8 @@ arch:
   - aarch64
 init: false
 homeassistant_api: false
-host_network: false
-ports:
-  11470/tcp: 11470
-  12470/tcp: 12470
-ports_description:
-  11470/tcp: "Stremio HTTP streaming server"
-  12470/tcp: "Stremio HTTPS streaming server"
+host_network: true
+watchdog: "http://[HOST]:11470"
 ingress: false
 startup: services
 map:
