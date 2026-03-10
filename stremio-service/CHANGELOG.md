@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2
+- attempt to fix networking issue with new setup
+
 ## 0.1.1
 - use host_network for better performance
 - more memory for node.js process
